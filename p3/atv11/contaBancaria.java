@@ -1,11 +1,11 @@
-package p3.atv10;
+package p3.atv11;
 
 public class contaBancaria {
     private String nome;
     private long numeroDaConta;
     private long saldo;
 
-    contaBancaria(String nome, long numeroDaConta, long saldo){
+    public contaBancaria(String nome, long numeroDaConta, long saldo){
         this.nome = nome;
         this.numeroDaConta = numeroDaConta;
         this.saldo = saldo;
@@ -39,8 +39,13 @@ public class contaBancaria {
         this.saldo = this.saldo + deposito;
     }
 
-    public void sacar(long deposito){
-        this.saldo = this.saldo - deposito;
+    public void sacar (long deposito) throws Exception{
+        
+        if(this.saldo - deposito >= -200){
+            this.saldo = this.saldo - deposito;
+        }else{
+            throw new Exception("a conta ficará mais negativa que o limite");
+        }
     }   
 }
 
