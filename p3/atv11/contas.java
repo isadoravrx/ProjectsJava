@@ -1,6 +1,6 @@
 package p3.atv11;
 import java.util.Scanner;
-public class contas{
+public abstract class contas{
     public static void main(String[] args) throws Exception{
         Scanner sc = new Scanner(System.in);
         String nomeCliente; 
